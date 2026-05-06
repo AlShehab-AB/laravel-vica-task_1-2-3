@@ -22,11 +22,14 @@ class DatabaseSeeder extends Seeder
 //            'password' => Hash::make('password'),
 //            'is_admin' => true
 //        ]);
-//        $this->call([
+        $this->call([
 //            UsersTableSeeder::class,
-//            PostsTableSeeder::class,
+        //    PostsTableSeeder::class,
+            RolesAndPermissionsSeeder::class,
+            UsersTableSeeder::class,
 
-//        ]);
+        ]);
+
     }
 
 }

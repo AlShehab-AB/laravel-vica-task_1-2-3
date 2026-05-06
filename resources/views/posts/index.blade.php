@@ -5,13 +5,15 @@
 @section('content')
     <form action="{{ route('logout') }}" method="post">
         @csrf
-        @can('manageUser' , Auth()->user())
-            <a href="{{ route('users.index') }}" class="btn btn-primary mt-4 ml-4">Management</a>
+        @can('manage roles')
             <a href="{{ route('deleteAll') }}" class="btn btn-primary mt-4 ml-4">Delete All</a>
+            <a href="{{ route('users.index') }}" class="btn btn-primary mt-4 ml-4">Users</a>
+            <a href="{{ route('roles.index') }}" class="btn btn-primary mt-4 ml-4">Roles</a>
         @endcan
         <input type="submit" value="Logout" class="btn btn-danger mt-4 ml-4">
     </form>
     <hr>
+
     <div class="container text-center">
         <div class="row gy-5">
             @forelse ($posts as $post)
